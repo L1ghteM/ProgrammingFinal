@@ -23,7 +23,10 @@ public class Car : MonoBehaviour
    
     void Update()
     {
-
+        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Rotate(Vector3.back * Time.deltaTime * turnSpeed * horizontalInput);
+        transform.Translate(Vector2.up * Time.deltaTime * moveSpeed * verticalInput);
         /*
          * FINAL EXAM #1
          * Write a script that will allow movement.
